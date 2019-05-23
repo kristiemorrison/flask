@@ -1,0 +1,19 @@
+<p>
+{% if url %}
+  The long url you entered is {{ url }}.
+{% else %}
+  Please enter your long url in the form below:
+{% endif %}
+{% if short_url %}
+  Your super short url is {{ short_url }}
+{% else %}
+  Please enter your long url to get your short one:
+{% endif %}
+</p>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.url.label }} {{ form.url() }}
+    {{ form.submit() }}
+</form>
+
